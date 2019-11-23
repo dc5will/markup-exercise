@@ -6,11 +6,9 @@ import Hotels from './components/Hotels/Hotels';
 function App() {
   return (
     <main className="App">
-      <body>
         <Navbar/>
         <Header/>
         <Hotels/>
-      </body>
     </main>
   );
 }
