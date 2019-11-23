@@ -3,7 +3,7 @@ import HotelApiService from "../../services/hotel-api-service";
 import './Details.css'
 
 export default function Details() {
-  const [venetianDetails, setVenetianDetails] = useState("");
+  const [venetianDetails, setVenetianDetails] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ export default function Details() {
     });
   }, [loading]);
 
-  console.log(venetianDetails);
+  console.log('venetianDetails[0]', venetianDetails[0]);
 
   // TODO: figure out why i cant grab the values I want from obj
   return (
