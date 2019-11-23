@@ -1,12 +1,18 @@
 import React from "react";
+import Navbar from './components/Navbar/Navbar';
+import Header from './components/Header/Header';
+import Hotels from './components/Hotels/Hotels';
+import Description from "./components/Description/Description";
+import HotelInfo from './components/HotelInfo/HotelInfo';
 
 function App() {
   return (
     <main className="App">
-      <body>
-        <h4>Welcome!</h4>
-        If you are here, then you are ready to start coding the example!
-      </body>
+        <Navbar/>
+        <Header/>
+        <Hotels/>
+        <Description/>
+        <HotelInfo/>
     </main>
   );
 }
