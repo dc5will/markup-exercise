@@ -1,0 +1,24 @@
+/* Hotel Page styling */
+.hotel-page-container {
+  border: solid 2px orange;
+}
+
+/* Nav bar styling */
+.navbar-container {
+  border: solid 2px blue;  
+}
+
+/* Hotel info header styling */
+.hotel-page-header-container {
+  border: solid 2px red;
+}
+
+/* Hotel page hotel list styling */
+.hotel-page-hotel-list-container {
+  border: solid 2px green;
+}
+
+/* Hotel page main container (description, details, location) */
+.hotel-page-main-container {
+  border: solid 2px purple;
+}

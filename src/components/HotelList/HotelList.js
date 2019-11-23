@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import config from "../../config";
-import "./Hotels.css";
+import "./HotelList.css";
 
-export default function Hotels() {
+export default function HotelList() {
   const [hotels, setHotels] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    getHotels().then(hotels => {
+    getHotelList().then(hotels => {
       let newHotels = [];
       hotels.list.forEach(hotel => {
         newHotels.push(hotel);
@@ -18,7 +18,7 @@ export default function Hotels() {
     });
   }, [loading]);
 
-  function getHotels() {
+  function getHotelList() {
     return fetch(`${config.API_ENDPOINT}/hotels`, {
       method: "GET",
       headers: {

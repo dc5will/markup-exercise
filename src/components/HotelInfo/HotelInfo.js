@@ -31,7 +31,7 @@ export default function HotelInfo() {
   return (
     <div>
       <h4>{venetian.name}</h4>
-      <h3>{venetian.price}</h3>
+      <h3>${venetian.price}</h3>
       <div>{venetian.phoneNumber}</div>
     </div>
   );
