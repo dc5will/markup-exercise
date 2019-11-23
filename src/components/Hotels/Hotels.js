@@ -35,7 +35,7 @@ export default function Hotels() {
       {hotels.map((hotel, index) => (
         <div key={index}>
           <div>
-            <p>{hotel.name} - {hotel.price}</p>
+            <p>{hotel.name} - ${hotel.price}</p>
           </div>
         </div>
       ))}
