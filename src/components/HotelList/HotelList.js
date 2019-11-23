@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import config from "../../config";
+import HotelApiService from '../../services/hotel-api-service';
 import "./HotelList.css";
 
 export default function HotelList() {
@@ -7,7 +7,7 @@ export default function HotelList() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    getHotelList().then(hotels => {
+    HotelApiService.getHotelList().then(hotels => {
       let newHotels = [];
       hotels.list.forEach(hotel => {
         newHotels.push(hotel);
@@ -17,17 +17,6 @@ export default function HotelList() {
       setLoading(false);
     });
   }, [loading]);
-
-  function getHotelList() {
-    return fetch(`${config.API_ENDPOINT}/hotels`, {
-      method: "GET",
-      headers: {
-        "content-type": "application/json"
-      }
-    }).then(res =>
-      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
-    );
-  }
 
   console.log("testing", hotels);
   return (
