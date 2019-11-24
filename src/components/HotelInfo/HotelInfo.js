@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import HotelApiService from '../../services/hotel-api-service';
+import HotelApiService from "../../services/hotel-api-service";
 import "./HotelInfo";
 
 export default function HotelInfo() {
@@ -13,15 +13,19 @@ export default function HotelInfo() {
     });
   }, [loading]);
 
-  console.log("venetian data", venetian); 
-  console.log("venetian location", venetian.location); 
-  console.log('venetian img', venetian.details)
+  console.log("venetian data", venetian);
+  console.log("venetian location", venetian.location);
+  console.log("venetian img", venetian.details);
 
   return (
-    <div>
-      <h4>{venetian.name}</h4>
-      <h3>${venetian.price}</h3>
+    <div className="header-info-container">
+      <div className="hotel-name">
+        <h4>{venetian.name} *****</h4>
+      </div>
       <div>{venetian.phoneNumber}</div>
+      <div className='hotel-price'>
+        <h3>${venetian.price}</h3>
+      </div>
     </div>
   );
 }

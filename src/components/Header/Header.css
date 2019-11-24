@@ -1,3 +1,15 @@
+.header-container {
+  display: inline-flex;
+}
+
+.header-image-container {
+  /* display: flex; */
+}
+
 .header__hotel-image {
   border: solid 2px maroon;
+}
+
+.header__hotel-info {
+
 }

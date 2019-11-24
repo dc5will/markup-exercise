@@ -9,27 +9,25 @@ import "./HotelPage.css";
 
 export default function HotelPage() {
   return (
-    <div className="hotel-page-container">
-
+    <>
       <nav className="navbar-container">
         <Navbar />
       </nav>
-
       <header className="hotel-page-header-container">
         <Header />
       </header>
+      <div className="hotel-page-container">
+        <aside className="hotel-page-hotel-list-container">
+          <HotelList />
+        </aside>
 
-      <aside className="hotel-page-hotel-list-container">
-        <HotelList />
-      </aside>
-
-      <section className="hotel-page-main-container">
-        {/* Put tabs here */}
-        <Description />
-        <Details />
-        <Location />
-      </section>
-      
-    </div>
+        <section className="hotel-page-main-container">
+          {/* Put tabs here */}
+          <Description />
+          <Details />
+          <Location />
+        </section>
+      </div>
+    </>
   );
 }

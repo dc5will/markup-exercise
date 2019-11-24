@@ -1,0 +1,9 @@
+.header-info-container {
+  display: flex;
+  flex-grow: 1;
+}
+
+.hotel-price {
+  display: flex;
+  justify-content: flex-end;
+}

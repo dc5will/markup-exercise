@@ -1,24 +1,33 @@
 /* Hotel Page styling */
 .hotel-page-container {
+  display: flex;
+  flex: 1;
   border: solid 2px orange;
 }
 
 /* Nav bar styling */
 .navbar-container {
-  border: solid 2px blue;  
+  border: solid 2px blue; 
 }
 
 /* Hotel info header styling */
 .hotel-page-header-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
   border: solid 2px red;
 }
 
 /* Hotel page hotel list styling */
-.hotel-page-hotel-list-container {
+.hotel-page-container > .hotel-page-hotel-list-container {
+  flex: 0 0 255px;
+  background: lightgrey;
   border: solid 2px green;
 }
 
 /* Hotel page main container (description, details, location) */
-.hotel-page-main-container {
+.hotel-page-container > .hotel-page-main-container {
+  flex: 1;
   border: solid 2px purple;
 }
