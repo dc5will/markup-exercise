@@ -1,0 +1,44 @@
+.header-info-container {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Left side of header hotel info styling */
+.left-side {
+  text-align: left;
+}
+
+.hotel-name {
+  text-transform: uppercase;
+  margin: 10px 0 0 20px;
+  font-size: 28px;
+  /* padding: 0; */
+}
+
+.second-row-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.second-row-info> p {
+  margin-left: 20px;
+}
+
+/* Right side of header price styling */
+.right-side {
+  text-align: right;
+  margin-right: 20px;
+}
+
+.hotel-price {
+  font-size: 50px;
+  font-weight: 700;
+  text-align: left;
+  color: rgb(244,135,33);
+}
+
+.tab-container {
+  flex-wrap: wrap;
+}

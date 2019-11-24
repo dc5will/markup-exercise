@@ -3,7 +3,7 @@ import HotelPage from '../HotelPage/HotelPage';
 
 function App() {
   return (
-    <main className="App">
+    <main className="main-container">
       <HotelPage/>
     </main>
   );

@@ -1,3 +1,26 @@
 .hotel-list_container {
   border: solid 1px black;
 }
+
+.row {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  margin: 10px 0 10px 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.left-column {
+
+}
+
+.right-column {
+
+}

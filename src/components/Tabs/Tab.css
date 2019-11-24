@@ -1,0 +1,29 @@
+.tabs-container {
+  background-color: rgb(137,94,149);
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.tab-list {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #ccc;
+  padding-left: 0;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.tab-list-item {
+  color: rgb(218,182,224);
+  display: flex;
+  list-style: none;
+  margin-bottom: -1px;
+  padding: 0.5rem 0.75rem;
+}
+
+.tab-list-active {
+  color: white;
+  border-bottom: solid 2px rgb(115,48,128);
+  /* border-width: 1px 1px 0 1px; */
+}
