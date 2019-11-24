@@ -4,19 +4,36 @@
   justify-content: space-between;
 }
 
+/* Left side of header hotel info styling */
 .left-side {
   text-align: left;
 }
 
+.hotel-name {
+  text-transform: uppercase;
+  margin: 10px 0 0 20px;
+  font-size: 28px;
+  /* padding: 0; */
+}
+
+.second-row-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.second-row-info>p {
+  margin-left: 20px;
+}
+
+/* Right side of header price styling */
 .right-side {
   text-align: right;
+  margin-right: 20px;
 }
 
 .hotel-price {
-  /* display: flex; */
-  /* justify-content: flex-end; */
-}
-
-.hotel-name {
-  text-transform: uppercase;
+  font-size: 50px;
+  font-weight: 700;
+  text-align: left;
+  color: darkorange;
 }

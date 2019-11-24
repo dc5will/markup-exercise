@@ -5,6 +5,7 @@ import "./HotelInfo.css";
 export default function HotelInfo() {
   const [venetian, setVenetian] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [venetianLocation, setVenetianLocation] = useState({});
   // const [hotelName, setHotelName] = useState('');
 
   useEffect(() => {
@@ -12,21 +13,31 @@ export default function HotelInfo() {
       setVenetian(venetian);
       setLoading(false);
     });
+    HotelApiService.getVenetianInfo().then(venetian => {
+      setVenetianLocation(venetian.location);
+      setLoading(false);
+    });
   }, [loading]);
-  
-  console.log("venetian data", typeof(venetian.name));
+
+  console.log("venetian location", venetianLocation.areaName);
+  console.log("venetian data", venetian.name);
   // console.log("venetian location", venetian.location);
   // console.log("venetian img", venetian.details);
 
   return (
     <div className="header-info-container">
       <div className="hotel-name-container left-side">
-        <h4 className='hotel-name'>{venetian.name}</h4>
-      <div>{venetian.phoneNumber}</div>
+        <div className="hotel-name">{venetian.name}</div>
+        <div className="second-row-info">
+          <p className="hotel-area-name">{venetianLocation.areaName}</p>
+          <p className="hotel-phone-number">{venetian.phoneNumber}</p>
+          <p className="best-price-guarantee">Best Price Guarantee</p>
+        </div>
       </div>
 
-      <div className='hotel-price right-side'>
-        <h4>${venetian.price}</h4>
+      <div className="right-side">
+        <div className='hotel-price'>${venetian.price}</div>
+        HOTEL ROOMS FROM
       </div>
     </div>
   );
