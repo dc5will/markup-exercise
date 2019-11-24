@@ -1,9 +1,22 @@
 .header-info-container {
   display: flex;
-  flex-grow: 1;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.left-side {
+  text-align: left;
+}
+
+.right-side {
+  text-align: right;
 }
 
 .hotel-price {
-  display: flex;
-  justify-content: flex-end;
+  /* display: flex; */
+  /* justify-content: flex-end; */
+}
+
+.hotel-name {
+  text-transform: uppercase;
 }

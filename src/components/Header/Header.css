@@ -1,9 +1,10 @@
 .header-container {
   display: inline-flex;
+  flex: 1;
 }
 
 .header-image-container {
-  /* display: flex; */
+  display: flex;
 }
 
 .header__hotel-image {
@@ -11,5 +12,6 @@
 }
 
 .header__hotel-info {
-
+  display: flex;
+  width: 100%;
 }
