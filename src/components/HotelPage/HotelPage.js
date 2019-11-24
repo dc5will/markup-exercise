@@ -23,18 +23,21 @@ export default function HotelPage() {
         </aside>
 
         <section className="hotel-page-main-container">
-          {/* Put tabs here */}
           {/* tab section */}
           <div className="tab-container">
             <Tabs>
-              <div label="DESCRIPTION">DESCRIPTION PLACEHOLDER</div>
-              <div label="DETAILS">DETAILS PLACEHOLDER</div>
-              <div label="LOCATION">LOCATION PLACEHOLDER</div>
+              <div label="DESCRIPTION">
+                <Description />
+              </div>
+              <div label="DETAILS">
+                {" "}
+                <Details />
+              </div>
+              <div label="LOCATION">
+                <Location />
+              </div>
             </Tabs>
           </div>
-          <Description />
-          <Details />
-          <Location />
         </section>
       </div>
     </>
