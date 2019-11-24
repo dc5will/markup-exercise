@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import HotelApiService from "../../services/hotel-api-service";
+import mapVenetian from '../../assets/images/map_venetian.png';
 import './Location.css'
 
 export default function Description() {
@@ -27,6 +28,7 @@ export default function Description() {
         {venetianLocation.address}, {venetianLocation.city}, {venetianLocation.state}, {venetianLocation.postalCode}
       </h4>
       <div className='map-container'>
+        <img src={mapVenetian} className='map-location' alt='venetian-google-maps'/>
       </div>
     </div>
   );

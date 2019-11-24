@@ -1,5 +1,5 @@
 import React from "react";
-import HotelPage from './components/HotelPage/HotelPage'
+import HotelPage from '../HotelPage/HotelPage';
 
 function App() {
   return (

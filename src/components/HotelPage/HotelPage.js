@@ -10,6 +10,7 @@ import "./HotelPage.css";
 export default function HotelPage() {
   return (
     <div className="hotel-page-container">
+
       <nav className="navbar-container">
         <Navbar />
       </nav>
@@ -22,11 +23,12 @@ export default function HotelPage() {
         <HotelList />
       </aside>
 
-      <div className="hotel-page-main-container">
+      <section className="hotel-page-main-container">
+        {/* Put tabs here */}
         <Description />
         <Details />
         <Location />
-      </div>
+      </section>
       
     </div>
   );
