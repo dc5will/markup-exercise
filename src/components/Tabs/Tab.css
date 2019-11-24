@@ -1,5 +1,5 @@
 .tabs-container {
-  background-color: purple;
+  background-color: rgb(137,94,149);
   display: flex;
   justify-content: space-between;
   flex: 1;
@@ -15,7 +15,7 @@
 }
 
 .tab-list-item {
-  color: grey;
+  color: rgb(218,182,224);
   display: flex;
   list-style: none;
   margin-bottom: -1px;
@@ -24,6 +24,6 @@
 
 .tab-list-active {
   color: white;
-  border-bottom: solid 2px darkmagenta;
+  border-bottom: solid 2px rgb(115,48,128);
   /* border-width: 1px 1px 0 1px; */
 }

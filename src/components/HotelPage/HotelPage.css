@@ -29,5 +29,5 @@
 /* Hotel page main container (description, details, location) */
 .hotel-page-container > .hotel-page-main-container {
   flex: 1;
-  border: solid 2px purple;
+  border: solid 2px rgb(137,94,149);
 }

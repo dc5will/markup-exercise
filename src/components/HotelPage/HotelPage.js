@@ -8,8 +8,8 @@ import Location from "../Location/Location";
 import Tabs from "../Tabs/Tabs";
 import "./HotelPage.css";
 
-export default function HotelPage() {
-
+export default function HotelPage(props) {
+  
 
   return (
     <>
@@ -25,8 +25,10 @@ export default function HotelPage() {
         </aside>
 
         <section className="hotel-page-main-container">
-          {/* tab section
-          <div className="tab-container">
+
+
+          {/* tab section */}
+          {/* <div className="tab-container">
             <Tabs>
               <div label="DESCRIPTION">
                 <Description />
