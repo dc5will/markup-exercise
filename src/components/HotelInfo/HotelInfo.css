@@ -2,6 +2,7 @@
   display: flex;
   flex: 1;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 /* Left side of header hotel info styling */
@@ -21,7 +22,7 @@
   flex-direction: row;
 }
 
-.second-row-info>p {
+.second-row-info> p {
   margin-left: 20px;
 }
 
@@ -36,4 +37,8 @@
   font-weight: 700;
   text-align: left;
   color: darkorange;
+}
+
+.tab-container {
+  flex-wrap: wrap;
 }

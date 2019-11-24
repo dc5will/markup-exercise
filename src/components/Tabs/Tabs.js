@@ -27,7 +27,7 @@ class Tabs extends Component {
     } = this;
 
     return (
-      <div className="tabs">
+      <div className="tabs-container">
         <ol className="tab-list">
           {children.map(child => {
             const { label } = child.props;

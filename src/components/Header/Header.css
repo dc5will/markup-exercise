@@ -1,6 +1,7 @@
 .header-container {
   display: inline-flex;
   flex: 1;
+  /* flex-wrap: wrap; */
 }
 
 .header-image-container {
@@ -13,5 +14,13 @@
 
 .header__hotel-info {
   display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.tab-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
   width: 100%;
 }

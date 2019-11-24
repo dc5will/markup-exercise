@@ -9,6 +9,8 @@ import Tabs from "../Tabs/Tabs";
 import "./HotelPage.css";
 
 export default function HotelPage() {
+
+
   return (
     <>
       <nav className="navbar-container">
@@ -23,7 +25,7 @@ export default function HotelPage() {
         </aside>
 
         <section className="hotel-page-main-container">
-          {/* tab section */}
+          {/* tab section
           <div className="tab-container">
             <Tabs>
               <div label="DESCRIPTION">
@@ -37,7 +39,7 @@ export default function HotelPage() {
                 <Location />
               </div>
             </Tabs>
-          </div>
+          </div> */}
         </section>
       </div>
     </>

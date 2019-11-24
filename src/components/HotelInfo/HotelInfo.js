@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import HotelApiService from "../../services/hotel-api-service";
 import "./HotelInfo.css";
+import Tabs from "../Tabs/Tabs";
 
-export default function HotelInfo() {
+export default function HotelInfo(props) {
   const [venetian, setVenetian] = useState([]);
   const [loading, setLoading] = useState(false);
   const [venetianLocation, setVenetianLocation] = useState({});
@@ -36,8 +37,17 @@ export default function HotelInfo() {
       </div>
 
       <div className="right-side">
-        <div className='hotel-price'>${venetian.price}</div>
+        <div className="hotel-price">${venetian.price}</div>
         HOTEL ROOMS FROM
+      </div>
+
+      {/* Temp tab section */}
+      <div className="tab-container">
+        <Tabs>
+          <div label="DESCRIPTION"></div>
+          <div label="DETAILS"></div>
+          <div label="LOCATION"></div>
+        </Tabs>
       </div>
     </div>
   );
