@@ -13,7 +13,6 @@ export default function HotelList() {
       hotels.list.forEach(hotel => {
         newHotels.push(hotel);
       });
-
       // console.log(newHotels);
       setHotels(newHotels);
       setLoading(false);

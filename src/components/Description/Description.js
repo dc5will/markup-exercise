@@ -13,12 +13,16 @@ export default function Description() {
     });
   }, [loading]);
 
+  console.log(venetianDescription)
   // console.log(venetianDescription)
   // TODO: fix formatting for returned string
 
+  const hotelDescription = venetianDescription;
+  console.log('venetian description', venetianDescription)
+
   return (
     <div className="description-container">
-      <p>{venetianDescription}</p>
+      <p className='hotel-description'>{venetianDescription}</p>
     </div>
   );
 }

@@ -11,9 +11,6 @@ export default function HotelInfo(props) {
   useEffect(() => {
     HotelApiService.getVenetianInfo().then(venetian => {
       setVenetian(venetian);
-      setLoading(false);
-    });
-    HotelApiService.getVenetianInfo().then(venetian => {
       setVenetianLocation(venetian.location);
       setLoading(false);
     });
