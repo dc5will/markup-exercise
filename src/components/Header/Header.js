@@ -9,13 +9,13 @@ export default function Header(props) {
   return (
     <section className="header-container">
       {/* image section */}
-      <div className="header-image-container">
+      {/* <div className="header-image-container">
         <img
           src={Venetian}
           className="header__hotel-image"
           alt="venetian_image"
         />
-      </div>
+      </div> */}
 
       {/* Info section */}
       <div className="header__hotel-info">

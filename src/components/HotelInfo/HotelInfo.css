@@ -28,7 +28,7 @@
 
 /* Right side of header price styling */
 .right-side {
-  text-align: right;
+  justify-content: flex-end;
   margin-right: 20px;
 }
 

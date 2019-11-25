@@ -9,26 +9,26 @@ import Tabs from "../Tabs/Tabs";
 import "./HotelPage.css";
 
 export default function HotelPage(props) {
-  
-
   return (
     <>
-      <nav className="navbar-container">
-        <Navbar />
-      </nav>
-      <header className="hotel-page-header-container">
-        <Header />
-      </header>
+        <nav className="navbar-container">
+          <Navbar />
+        </nav>
       <div className="hotel-page-container">
-        <aside className="hotel-page-hotel-list-container">
+        {/* navbar section for back button */}
+
+        {/* left side hotel list */}
+        <aside className="hotel-list-container">
           <HotelList />
         </aside>
 
-        <section className="hotel-page-main-container">
-
-
-          {/* tab section */}
-          {/* <div className="tab-container">
+        {/* main content right side */}
+        <main className="hotel-page-content">
+        <header className="hotel-page-header-container">
+          <Header />
+        </header>
+          {/* tab main */}
+          <div className="tab-container">
             <Tabs>
               <div label="DESCRIPTION">
                 <Description />
@@ -41,9 +41,9 @@ export default function HotelPage(props) {
                 <Location />
               </div>
             </Tabs>
-          </div> */}
-        </section>
+          </div>
+        </main>
       </div>
-    </>
+      </>
   );
 }

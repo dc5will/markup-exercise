@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import HotelApiService from "../../services/hotel-api-service";
+import Venetian from "../../assets/images/venetian.jpg";
 import "./HotelList.css";
 
 export default function HotelList() {
@@ -39,6 +40,14 @@ export default function HotelList() {
 
   return (
     <div className="hotel-list_container">
+      {/* image section */}
+      <div className="header-image-container">
+        <img
+          src={Venetian}
+          className="header__hotel-image"
+          alt="venetian_image"
+        />
+      </div>
       {sortedHotelList.map((hotel, index) => (
         <div key={index}>
           <div className="row">

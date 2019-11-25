@@ -42,13 +42,13 @@ export default function HotelInfo(props) {
       </div>
 
       {/* Temp tab section */}
-      <div className="tab-container">
+      {/* <div className="tab-container">
         <Tabs>
           <div label="DESCRIPTION"></div>
           <div label="DETAILS"></div>
           <div label="LOCATION"></div>
         </Tabs>
-      </div>
+      </div> */}
     </div>
   );
 }
