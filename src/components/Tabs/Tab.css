@@ -1,12 +1,13 @@
 .tabs-container {
-  background-color: rgb(137,94,149);
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
   flex: 1;
 }
 
 .tab-list {
+  margin-top: 45px;
   display: flex;
+  background-color: rgb(137,94,149);
   flex-direction: row;
   border-bottom: 1px solid #ccc;
   padding-left: 0;
