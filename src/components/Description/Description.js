@@ -17,9 +17,6 @@ export default function Description() {
   // console.log(venetianDescription)
   // TODO: fix formatting for returned string
 
-  const hotelDescription = venetianDescription;
-  console.log('venetian description', venetianDescription)
-
   return (
     <div className="description-container">
       <p className='hotel-description'>{venetianDescription}</p>
