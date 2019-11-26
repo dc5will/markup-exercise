@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import HotelApiService from "../../services/hotel-api-service";
 import useCollapse from "react-collapsed";
 import "./Description.css";
+import Icon from "../../setup-icons";
+import helpers from "../../services/helper";
 
 export default function Description() {
   const [venetianDescription, setVenetianDescription] = useState("");
-
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -16,9 +17,9 @@ export default function Description() {
   }, [loading]);
 
   const {
-    getCollapseProps: outerCollapseProps,
-    getToggleProps: outerToggleProps,
-    isOpen: outerOpen
+    getCollapseProps: outerCollapseProps
+    // getToggleProps: outerToggleProps,
+    // isOpen: outerOpen
   } = useCollapse({
     defaultOpen: true
   });
@@ -28,38 +29,36 @@ export default function Description() {
     isOpen: innerOpen
   } = useCollapse();
 
-  // console.log('venetianDescription', venetianDescription)
+  console.log("venetianDescription", venetianDescription);
 
   return (
     <div className="description-container">
       <React.Fragment>
-        {/* <button {...outerToggleProps({ style: { marginBottom: "1em" } })}>
-          {outerOpen ? "Close" : "Expand"}
-        </button> */}
         <section
           className="hotel-description-collapsed"
           {...outerCollapseProps()}
         >
-          <p className="hotel-description">{venetianDescription}</p>
+          <p className="hotel-description">{helpers.venetianCollapsed}</p>
 
           {!innerOpen && (
-            <button {...innerToggleProps()}>VIEW MORE DETAILS</button>
+            <label {...innerToggleProps()}>
+              <div className="show-full-description">
+                <Icon icon="down" />
+                SHOW FULL DESCRIPTION
+              </div>
+            </label>
           )}
-          <p {...innerCollapseProps()}>{venetianDescription}</p>
+          <p {...innerCollapseProps()}>{helpers.venetianFull}</p>
           {innerOpen && (
-            <button {...innerToggleProps({ style: { display: "block" } })}>
-              Click to collapse
-            </button>
+            <label {...innerToggleProps()}>
+              <div className="hide-full-description">
+                <Icon icon="up" />
+                HIDE FULL DESCRIPTION
+              </div>
+            </label>
           )}
         </section>
       </React.Fragment>
-
-      {/* <div className="hotel-description-collapsed">
-        <p className="hotel-description">{venetianDescription}</p>
-      </div> */}
-      {/* <div className="hotel-description-full">
-        <p className="hotel-description">{venetianDescription}</p>
-      </div> */}
     </div>
   );
 }

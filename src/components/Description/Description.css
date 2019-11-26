@@ -8,5 +8,9 @@
 }
 
 .hotel-description-collapsed {
-  /* height: 200px; */
+  height: 200px;
+}
+
+.hide-full-description, .show-full-description {
+  cursor: pointer;
 }
