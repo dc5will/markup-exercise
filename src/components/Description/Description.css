@@ -1,5 +1,6 @@
 .description-container {
   border: solid 1px black;
+  white-space: pre-wrap;
 }
 
 .hotel-description {
@@ -7,5 +8,5 @@
 }
 
 .hotel-description-collapsed {
-  /* max-block-size: 200px; */
+  /* height: 200px; */
 }
