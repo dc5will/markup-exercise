@@ -44,3 +44,15 @@
 .tab-container {
   flex-wrap: wrap;
 }
+
+.second-row-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.icons {
+  -moz-transform: scale(1, -1);
+  -o-transform: scale(1, -1);
+  -webkit-transform: scale(1, -1);
+  transform: scale(1, -1);
+}
