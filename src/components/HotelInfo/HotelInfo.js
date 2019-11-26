@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import HotelApiService from "../../services/hotel-api-service";
 import "./HotelInfo.css";
-import "../../assets/fonts/icons.ttf";
-import "../../assets/fonts/icons.svg";
+// import "../../assets/fonts/icons.ttf";
+// import "../../assets/fonts/icons.svg";
 
 export default function HotelInfo(props) {
   const [venetian, setVenetian] = useState([]);
