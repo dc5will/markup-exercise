@@ -13,7 +13,7 @@ export default function Description() {
     });
   }, [loading]);
 
-  console.log(venetianDescription)
+  // console.log(venetianDescription)
   // console.log(venetianDescription)
 
   return (

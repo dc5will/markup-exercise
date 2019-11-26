@@ -9,6 +9,7 @@ import Icon from "../../setup-icons";
 
 export default function HotelInfo(props) {
   const [venetian, setVenetian] = useState([]);
+  const [hotelRating, setHotelRating] = useState('')
   const [loading, setLoading] = useState(false);
   const [venetianLocation, setVenetianLocation] = useState({});
 
@@ -16,14 +17,23 @@ export default function HotelInfo(props) {
     HotelApiService.getVenetianInfo().then(venetian => {
       setVenetian(venetian);
       setVenetianLocation(venetian.location);
+      setHotelRating(venetian.starRating)
       setLoading(false);
     });
   }, [loading]);
 
-  console.log("venetian location", venetianLocation.areaName);
-  console.log("venetian data", venetian.name);
-  // console.log("venetian location", venetian.location);
-  // console.log("venetian img", venetian.details);
+  console.log('venetian.starRating', venetian.starRating)
+  
+  // TODO: is there a cleaner implementation?
+  // takes hotel rating from api, rounds up, and pushes out stars
+  function generateStarRating() {
+    let stars = [];
+    let hotelRatingRounded = Math.ceil(parseInt(hotelRating));
+    for (let i = 0; i < hotelRatingRounded; i++) {
+      stars.push(<Icon key={i} icon="star" />)
+    }
+    return stars;
+  }
 
   return (
     <>
@@ -31,7 +41,7 @@ export default function HotelInfo(props) {
         <div className="hotel-name-container left-side">
           <div className="hotel-name">
             {venetian.name}
-            <Icon icon="star" />
+            {generateStarRating()}
           </div>
           <div className="second-row-info">
             <label className="hotel-area-name">
