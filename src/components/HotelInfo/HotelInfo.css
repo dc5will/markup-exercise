@@ -18,12 +18,16 @@
   /* padding: 0; */
 }
 
+.hotel-area-name {
+  cursor: pointer;
+}
+
 .second-row-info {
   display: flex;
   flex-direction: row;
 }
 
-.second-row-info> p {
+.second-row-info > label {
   margin-left: 20px;
 }
 

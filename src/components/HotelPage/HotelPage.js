@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../Navbar/Navbar";
 import Header from "../Header/Header";
 import HotelList from "../HotelList/HotelList";
@@ -9,26 +9,27 @@ import Tabs from "../Tabs/Tabs";
 import "./HotelPage.css";
 
 export default function HotelPage(props) {
+  const [activeTab, setActiveTab] = useState('');
+
   return (
     <>
-        <nav className="navbar-container">
-          <Navbar />
-        </nav>
+      {/* navbar section for back button */}
+      <nav className="navbar-container">
+        <Navbar />
+      </nav>
       <div className="hotel-page-container">
-        {/* navbar section for back button */}
-
         {/* left side hotel list */}
         <aside className="hotel-list-container">
-          <HotelList />
+          <HotelList/>
         </aside>
 
         {/* main content right side */}
         <main className="hotel-page-content">
-        <header className="hotel-page-header-container">
-          <Header />
-        </header>
+          <header className="hotel-page-header-container">
+            <Header />
+          </header>
           {/* tab main */}
-          <div className="tab-container">
+          {/* <div className="tab-container">
             <Tabs>
               <div label="DESCRIPTION">
                 <Description />
@@ -41,9 +42,9 @@ export default function HotelPage(props) {
                 <Location />
               </div>
             </Tabs>
-          </div>
+          </div> */}
         </main>
       </div>
-      </>
+    </>
   );
 }

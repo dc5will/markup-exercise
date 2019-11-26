@@ -15,7 +15,6 @@ export default function Description() {
 
   console.log(venetianDescription)
   // console.log(venetianDescription)
-  // TODO: fix formatting for returned string
 
   return (
     <div className="description-container">
