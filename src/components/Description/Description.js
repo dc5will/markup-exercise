@@ -33,32 +33,31 @@ export default function Description() {
 
   return (
     <div className="description-container">
-      <React.Fragment>
-        <section
-          className="hotel-description-collapsed"
-          {...outerCollapseProps()}
-        >
-          <p className="hotel-description">{helpers.venetianCollapsed}</p>
+      <section
+        className="hotel-description-collapsed"
+        {...outerCollapseProps()}
+      >
+        <p className="hotel-description">{helpers.venetianCollapsed}</p>
 
-          {!innerOpen && (
-            <label {...innerToggleProps()}>
-              <div className="show-full-description">
-                <Icon icon="down" />
-                SHOW FULL DESCRIPTION
-              </div>
-            </label>
-          )}
-          <p {...innerCollapseProps()}>{helpers.venetianFull}</p>
-          {innerOpen && (
-            <label {...innerToggleProps()}>
-              <div className="hide-full-description">
-                <Icon icon="up" />
-                HIDE FULL DESCRIPTION
-              </div>
-            </label>
-          )}
-        </section>
-      </React.Fragment>
+        {!innerOpen && (
+          <label {...innerToggleProps()}>
+            <div className="show-full-description">
+              <Icon icon="down" />
+              SHOW FULL DESCRIPTION
+            </div>
+          </label>
+        )}
+        
+        <p {...innerCollapseProps()}>{helpers.venetianFull}</p>
+        {innerOpen && (
+          <label {...innerToggleProps()}>
+            <div className="hide-full-description">
+              <Icon icon="up" />
+              HIDE FULL DESCRIPTION
+            </div>
+          </label>
+        )}
+      </section>
     </div>
   );
 }

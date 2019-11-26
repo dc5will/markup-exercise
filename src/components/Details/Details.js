@@ -45,7 +45,7 @@ export default function Details() {
   function collapsedView(data) {
     let result = [];
     for (let i = 0; i < 2; i++) {
-      console.log('data', data[i])
+      console.log("data", data[i]);
       result.push(data[i]);
     }
     return result;
@@ -55,44 +55,46 @@ export default function Details() {
   function expandedView(data) {
     let result = [];
     for (let i = 2; i < data.length; i++) {
-      console.log('data', data[i])
+      console.log("data", data[i]);
       result.push(data[i]);
     }
     return result;
   }
 
-  console.log('collapsed details', collapsedDetails)
-
+  console.log("collapsed details", collapsedDetails);
 
   return (
     <div className="details-container">
       <section className="hotel-details-collapsed" {...outerCollapseProps()}>
-        <p className="hotel-details"></p>
+        <p className="hotel-details">
+          {collapsedDetails.map((data, index) => (
+            <div key={index}>
+              <strong>{data.label}:</strong>
+              <p>{data.value}</p>
+            </div>
+          ))}
+        </p>
 
         {!innerOpen && (
           <label {...innerToggleProps()}>
             <div className="show-full-details">
-            {collapsedDetails.map((data, index) => (
-              <div key={index}>
-                <strong>{data.label}:</strong>
-                <p>{data.value}</p>
-              </div>
-            ))}
               <Icon icon="down" />
               SHOW FULL DETAILS
             </div>
           </label>
         )}
-        <p {...innerCollapseProps()}></p>
+
+        <p {...innerCollapseProps()}>
+          {venetianDetails.map((data, index) => (
+            <div key={index}>
+              <strong>{data.label}:</strong>
+              <p>{data.value}</p>
+            </div>
+          ))}
+        </p>
         {innerOpen && (
           <label {...innerToggleProps()}>
             <div className="hide-full-details">
-            {venetianDetails.map((data, index) => (
-              <div key={index}>
-                <strong>{data.label}:</strong>
-                <p>{data.value}</p>
-              </div>
-            ))}
               <Icon icon="up" />
               HIDE FULL DETAILS
             </div>
