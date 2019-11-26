@@ -1,10 +1,11 @@
 .navbar-container {
   display: flex;
   flex-direction: row;
-  fill: purple;
+  fill: rgb(137,94,149);
 }
 
 .navbar-container > .icons {
+  cursor: pointer;
   margin-top: 15px;
 }
 
@@ -17,16 +18,14 @@
   display: flex;
   flex-direction: row;
   margin-left: 10px;
-  cursor: pointer;
 }
 
 .left-icon {
   margin-top: 20px;
   font-size: 10px;
-
 }
 
 .back-label-description {
   margin-top: 14px;
+  cursor: pointer;
 }
-

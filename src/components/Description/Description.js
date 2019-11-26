@@ -16,11 +16,7 @@ export default function Description() {
     });
   }, [loading]);
 
-  const {
-    getCollapseProps: outerCollapseProps
-    // getToggleProps: outerToggleProps,
-    // isOpen: outerOpen
-  } = useCollapse({
+  const { getCollapseProps: outerCollapseProps } = useCollapse({
     defaultOpen: true
   });
   const {
@@ -42,18 +38,18 @@ export default function Description() {
         {!innerOpen && (
           <label {...innerToggleProps()}>
             <div className="show-full-description">
-              <Icon icon="down" />
               SHOW FULL DESCRIPTION
+              <Icon icon="down" />
             </div>
           </label>
         )}
-        
+
         <p {...innerCollapseProps()}>{helpers.venetianFull}</p>
         {innerOpen && (
           <label {...innerToggleProps()}>
             <div className="hide-full-description">
-              <Icon icon="up" />
               HIDE FULL DESCRIPTION
+              <Icon icon="up" />
             </div>
           </label>
         )}

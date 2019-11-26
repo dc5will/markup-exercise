@@ -1,6 +1,18 @@
 .description-container {
-  border: solid 1px black;
   white-space: pre-wrap;
+  padding: 0.78rem;
+  font-size: 0.88rem;
+  color: #000;
+}
+
+.show-full-description > .icons {
+  fill: rgb(137,94,149);
+  margin-left: 10px;
+  
+}
+.hide-full-description > .icons {
+  fill: rgb(137,94,149);
+  margin-left: 10px;
 }
 
 .hotel-description {
@@ -12,5 +24,6 @@
 }
 
 .hide-full-description, .show-full-description {
+  color: rgb(137,94,149);
   cursor: pointer;
 }

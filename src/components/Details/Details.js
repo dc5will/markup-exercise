@@ -7,7 +7,7 @@ import "./Details.css";
 export default function Details() {
   const [venetianDetails, setVenetianDetails] = useState([]);
   const [collapsedDetails, setCollapsedDetails] = useState([]);
-  const [expandedDetails, setExpandedView] = useState([]);
+  // const [expandedDetails, setExpandedView] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export default function Details() {
       });
       setVenetianDetails(newDetails);
       setCollapsedDetails(collapsedView(newDetails));
-      setExpandedView(expandedView(newDetails));
+      // setExpandedView(expandedView(newDetails));
       setLoading(false);
     });
   }, [loading]);
@@ -51,18 +51,6 @@ export default function Details() {
     return result;
   }
 
-  // View for expanded view
-  function expandedView(data) {
-    let result = [];
-    for (let i = 2; i < data.length; i++) {
-      console.log("data", data[i]);
-      result.push(data[i]);
-    }
-    return result;
-  }
-
-  console.log("collapsed details", collapsedDetails);
-
   return (
     <div className="details-container">
       <section className="hotel-details-collapsed" {...outerCollapseProps()}>
@@ -78,8 +66,8 @@ export default function Details() {
         {!innerOpen && (
           <label {...innerToggleProps()}>
             <div className="show-full-details">
-              <Icon icon="down" />
               SHOW FULL DETAILS
+              <Icon icon="down" />
             </div>
           </label>
         )}
@@ -95,8 +83,8 @@ export default function Details() {
         {innerOpen && (
           <label {...innerToggleProps()}>
             <div className="hide-full-details">
-              <Icon icon="up" />
               HIDE FULL DETAILS
+              <Icon icon="up" />
             </div>
           </label>
         )}
