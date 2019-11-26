@@ -54,14 +54,14 @@ export default function Details() {
   return (
     <div className="details-container">
       <section className="hotel-details-collapsed" {...outerCollapseProps()}>
-        <p className="hotel-details">
+        <div className="hotel-details">
           {collapsedDetails.map((data, index) => (
             <div key={index}>
               <strong>{data.label}:</strong>
               <p>{data.value}</p>
             </div>
           ))}
-        </p>
+        </div>
 
         {!innerOpen && (
           <label {...innerToggleProps()}>
@@ -72,14 +72,14 @@ export default function Details() {
           </label>
         )}
 
-        <p {...innerCollapseProps()}>
+        <div {...innerCollapseProps()}>
           {venetianDetails.map((data, index) => (
             <div key={index}>
               <strong>{data.label}:</strong>
               <p>{data.value}</p>
             </div>
           ))}
-        </p>
+        </div>
         {innerOpen && (
           <label {...innerToggleProps()}>
             <div className="hide-full-details">
