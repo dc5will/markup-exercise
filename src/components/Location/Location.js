@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import HotelApiService from "../../services/hotel-api-service";
+import Icon from '../../setup-icons';
 import './Location.css'
 
 export default function Description() {
@@ -21,7 +22,7 @@ export default function Description() {
   return (
     <div className="Location-container">
       <h4 className='venetian-location'>
-        {venetianLocation.address}, {venetianLocation.city}, {venetianLocation.state}, {venetianLocation.postalCode}
+      <Icon icon="mark" />{venetianLocation.address}, {venetianLocation.city}, {venetianLocation.state}, {venetianLocation.postalCode}
       </h4>
       <div className='map-container'>
         <img src={venetianMedia.href} className='map-location' alt='venetian-google-maps' />
