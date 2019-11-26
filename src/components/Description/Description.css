@@ -5,3 +5,7 @@
 .hotel-description {
   white-space: pre-wrap;
 }
+
+.hotel-description-collapsed {
+  /* max-block-size: 200px; */
+}

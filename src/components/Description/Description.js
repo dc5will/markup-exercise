@@ -3,7 +3,8 @@ import HotelApiService from "../../services/hotel-api-service";
 import "./Description.css";
 
 export default function Description() {
-  const [venetianDescription, setVenetianDescription] = useState('');
+  const [venetianDescription, setVenetianDescription] = useState("");
+  
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -13,12 +14,14 @@ export default function Description() {
     });
   }, [loading]);
 
-  // console.log(venetianDescription)
-  // console.log(venetianDescription)
-
   return (
     <div className="description-container">
-      <p className='hotel-description'>{venetianDescription}</p>
+      <div className="hotel-description-collapsed">
+        <p className="hotel-description">{venetianDescription}</p>
+      </div>
+      {/* <div className="hotel-description-full">
+        <p className="hotel-description">{venetianDescription}</p>
+      </div> */}
     </div>
   );
 }

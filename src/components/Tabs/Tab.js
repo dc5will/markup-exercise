@@ -25,7 +25,7 @@ class Tab extends Component {
     if (activeTab === label) {
       className += " tab-list-active";
     }
-
+    
     return (
       <li className={className} onClick={onClick}>
         {label}
