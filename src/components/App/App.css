@@ -1,8 +1,5 @@
 .main-container {
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  font-family: "Open Sans", 'Verdana', 'Geneva', sans-serif; 
+  font-size: 0.84rem;
+  padding: 1rem;
 }

@@ -5,9 +5,11 @@ import Icon from "../../setup-icons";
 export default function Navbar() {
   return (
     <div className="navbar-container">
-      <Icon icon="left" />
-      <div className="navbar-back-button">
-        <p>SEE ALL LAS VEGAS HOTELS</p>
+      <Icon icon="left" className="left-icon" />
+      <div className="back-container">
+        <label className="navbar-back-button">
+          <p>SEE ALL LAS VEGAS HOTELS</p>
+        </label>
       </div>
     </div>
   );

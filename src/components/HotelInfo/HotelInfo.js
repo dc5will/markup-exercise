@@ -22,9 +22,6 @@ export default function HotelInfo(props) {
     });
   }, [loading]);
 
-  // console.log('venetian.starRating', venetian.starRating)
-
-  // TODO: is there a cleaner implementation?
   // takes hotel rating from api, rounds up, and pushes out stars
   function generateStarRating() {
     let stars = [];
@@ -44,6 +41,7 @@ export default function HotelInfo(props) {
             {generateStarRating()}
           </div>
           <div className="second-row-info">
+            
             <label className="hotel-area-name">
               <Icon icon="mark" />
               {venetianLocation.areaName}

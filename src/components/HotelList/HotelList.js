@@ -47,6 +47,7 @@ export default function HotelList() {
           alt="venetian_image"
         />
       </div>
+      <div className='sorted-hotel-list-container'>
       {sortedHotelList.map((hotel, index) => (
         <div key={index}>
           <div className="row">
@@ -59,6 +60,7 @@ export default function HotelList() {
           </div>
         </div>
       ))}
+      </div>
     </div>
   );
 }

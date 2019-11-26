@@ -18,3 +18,8 @@ code {
 * {
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: 'VegasFont';
+  src: local('VegasFont'), url('./assets/fonts/icons.ttf') format('truetype');
+}

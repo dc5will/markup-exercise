@@ -1,6 +1,7 @@
 .navbar-container {
   display: flex;
   flex-direction: row;
+  fill: purple;
 }
 
 .navbar-container > .icons {
@@ -9,7 +10,19 @@
 }
 
 .navbar-back-button {
-  margin-left: 10px;
+  color: rgb(137, 94, 149);
+  font-size: 1rem;
 }
 
+.back-container {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.left-icon {
+  margin-top: 20px;
+  font-size: 10px;
+}
 

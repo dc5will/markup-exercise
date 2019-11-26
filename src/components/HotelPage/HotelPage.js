@@ -9,7 +9,7 @@ import Tabs from "../Tabs/Tabs";
 import "./HotelPage.css";
 
 export default function HotelPage(props) {
-  const [activeTab, setActiveTab] = useState('');
+  // const [activeTab, setActiveTab] = useState('');
 
   return (
     <>

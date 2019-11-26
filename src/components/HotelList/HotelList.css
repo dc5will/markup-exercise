@@ -1,5 +1,6 @@
 .hotel-list_container {
   border: solid 1px black;
+  margin-top: 1rem;
 }
 
 .row {
@@ -18,9 +19,15 @@
 }
 
 .left-column {
-
+  width: 150px;
 }
 
 .right-column {
+  padding-left: 25px;
+  text-align: left;
+}
 
+.sorted-hotel-list-container {
+  background: rgb(239,239,239);
+  margin-top: 1.5rem;
 }
