@@ -1,15 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import Navbar from "../Navbar/Navbar";
 import Header from "../Header/Header";
 import HotelList from "../HotelList/HotelList";
-import Description from "../Description/Description";
-import Details from "../Details/Details";
-import Location from "../Location/Location";
-import Tabs from "../Tabs/Tabs";
+
 import "./HotelPage.css";
 
-export default function HotelPage(props) {
-  const [activeTab, setActiveTab] = useState('');
+export default function HotelPage() {
 
   return (
     <>
@@ -28,21 +24,6 @@ export default function HotelPage(props) {
           <header className="hotel-page-header-container">
             <Header />
           </header>
-          {/* tab main */}
-          {/* <div className="tab-container">
-            <Tabs>
-              <div label="DESCRIPTION">
-                <Description />
-              </div>
-              <div label="DETAILS">
-                {" "}
-                <Details />
-              </div>
-              <div label="LOCATION">
-                <Location />
-              </div>
-            </Tabs>
-          </div> */}
         </main>
       </div>
     </>

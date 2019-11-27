@@ -1,3 +1,11 @@
-.Location-container {
-  border: solid 1px black;
+.venetian-location {
+  margin-left: 1rem;
+  font-size: 16px;
+  color: black;
+}
+
+.map-location {
+  margin-left: 1rem;
+  width: 100%;
+  max-width: 645px;
 }

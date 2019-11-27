@@ -3,7 +3,7 @@
   flex: 1;
   justify-content: space-between;
   flex-wrap: wrap;
-  border: solid 2px pink;
+  margin-left: 1rem;
 }
 
 /* Left side of header hotel info styling */
@@ -13,9 +13,14 @@
 
 .hotel-name {
   text-transform: uppercase;
-  margin: 10px 0 0 20px;
-  font-size: 28px;
-  /* padding: 0; */
+  margin-top: 5px;
+  font-size: 36px;
+  display: flex;
+  flex-direction: row;
+}
+
+.hotel-ratings-container {
+  margin-left: 1rem;
 }
 
 .hotel-area-name {
@@ -39,10 +44,10 @@
 }
 
 .hotel-price {
-  font-size: 50px;
+  font-size: 52px;
   font-weight: 700;
   text-align: left;
-  color: rgb(244,135,33);
+  color: rgb(244, 135, 33);
 }
 
 .tab-container {
@@ -55,8 +60,19 @@
 }
 
 .icons {
+  height: 1rem;
+  width: 1rem;
   -moz-transform: scale(1, -1);
   -o-transform: scale(1, -1);
   -webkit-transform: scale(1, -1);
   transform: scale(1, -1);
+}
+
+.second-row-info > label {
+  margin: 0.5rem;
+  font-size: 1rem;;
+}
+
+.best-price-guarantee > .icons {
+  margin-right: 5px;
 }

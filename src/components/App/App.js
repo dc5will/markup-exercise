@@ -1,5 +1,6 @@
 import React from "react";
 import HotelPage from '../HotelPage/HotelPage';
+import './App.css';
 
 function App() {
   return (

@@ -1,15 +1,32 @@
 .navbar-container {
   display: flex;
   flex-direction: row;
+  fill: rgb(137,94,149);
+  margin-top: 5px;
 }
 
 .navbar-container > .icons {
-  margin-left: 20px;
+  cursor: pointer;
   margin-top: 15px;
 }
 
 .navbar-back-button {
+  color: rgb(137, 94, 149);
+  font-size: 1rem;
+}
+
+.back-container {
+  display: flex;
+  flex-direction: row;
   margin-left: 10px;
 }
 
+.left-icon {
+  margin-top: 15px;
+  font-size: 10px;
+}
 
+.back-label-description {
+  margin-top: 14px;
+  cursor: pointer;
+}

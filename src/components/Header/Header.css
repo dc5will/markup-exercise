@@ -9,11 +9,11 @@
 }
 
 .header__hotel-image {
-  border: solid 2px maroon;
+  width: 100%;
 }
 
 .header__hotel-info {
-  display: flex;
+  /* display: flex; */
   width: 100%;
   flex-wrap: wrap;
 }

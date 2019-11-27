@@ -13,7 +13,6 @@ export default function HotelList() {
       hotels.list.forEach(hotel => {
         newHotels.push(hotel);
       });
-      // console.log(newHotels);
       setHotels(newHotels);
       setLoading(false);
     });
@@ -25,17 +24,11 @@ export default function HotelList() {
       return hotels.find(a => a.name === name);
     }
   );
-  // console.log('uniqueHotelList', uniqueHotelList)
 
   // sort uniqueHotelList
   const sortedHotelList = uniqueHotelList.sort((a, b) =>
     a.name > b.name ? 1 : -1
   );
-  console.log("sortedHotelList", sortedHotelList);
-
-  // console.log('hotel list', hotels)
-  // const removeDuplicates = Array.from(new Set(hotels));
-  // console.log('remove duplicates', removeDuplicates)
 
   return (
     <div className="hotel-list_container">
@@ -47,18 +40,21 @@ export default function HotelList() {
           alt="venetian_image"
         />
       </div>
+      {/* sorted hotel list section  */}
+      <div className='sorted-hotel-list-container'>
       {sortedHotelList.map((hotel, index) => (
-        <div key={index}>
+        <div className='hotel-item' key={index}>
           <div className="row">
             <div className="column">
               <div className="left-column">{hotel.name}</div>
             </div>
             <div className="column">
-              <div className="right-column">${hotel.price}</div>
+              <div className="right-column">${parseFloat(hotel.price).toFixed(2)}</div>
             </div>
           </div>
         </div>
       ))}
+      </div>
     </div>
   );
 }
