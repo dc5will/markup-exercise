@@ -1,7 +1,7 @@
 # William's Markup Exercise
+- Built using create-react-app
 
 ## Client
-- `git clone git@github.com:dc5will/markup-exercise.git`
 - `npm install`
 - `npm start`
 
