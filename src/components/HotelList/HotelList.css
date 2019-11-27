@@ -1,18 +1,23 @@
 .hotel-list_container {
-  margin-top: 1rem;
+  margin-top: 0 1rem;
 }
 
 .sorted-hotel-list-container {
+  padding-top: 10px;
   background: rgb(239,239,239);
   margin-top: 1.5rem;
 }
 
 .row {
-  margin-left: 10px;
+  margin-left: 1rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+}
+
+.div:first-child {
+  margin-top: 20px;
 }
 
 .column {

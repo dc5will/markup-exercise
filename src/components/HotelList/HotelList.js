@@ -43,7 +43,7 @@ export default function HotelList() {
       {/* sorted hotel list section  */}
       <div className='sorted-hotel-list-container'>
       {sortedHotelList.map((hotel, index) => (
-        <div key={index}>
+        <div className='hotel-item' key={index}>
           <div className="row">
             <div className="column">
               <div className="left-column">{hotel.name}</div>

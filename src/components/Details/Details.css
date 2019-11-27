@@ -29,6 +29,7 @@
 
 .hotel-details-collapsed {
   height: 200px;
+  padding: 0 1rem;
 }
 
 .hide-full-details, .show-full-details {

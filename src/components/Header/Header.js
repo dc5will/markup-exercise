@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Header.css";
 import HotelInfo from "../HotelInfo/HotelInfo";
 
-export default function Header(props) {
+export default function Header() {
 
   return (
     <section className="header-container">

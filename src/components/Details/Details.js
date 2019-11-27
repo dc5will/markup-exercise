@@ -7,27 +7,22 @@ import "./Details.css";
 export default function Details() {
   const [venetianDetails, setVenetianDetails] = useState([]);
   const [collapsedDetails, setCollapsedDetails] = useState([]);
-  // const [expandedDetails, setExpandedView] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     HotelApiService.getVenetianInfo().then(data => {
       let newDetails = [];
-      // console.log('data.details', data.details);
       data.details.forEach(detail => {
         newDetails.push(detail);
       });
       setVenetianDetails(newDetails);
       setCollapsedDetails(collapsedView(newDetails));
-      // setExpandedView(expandedView(newDetails));
       setLoading(false);
     });
   }, [loading]);
 
   const {
     getCollapseProps: outerCollapseProps
-    // getToggleProps: outerToggleProps,
-    // isOpen: outerOpen
   } = useCollapse({
     defaultOpen: true
   });
@@ -37,15 +32,10 @@ export default function Details() {
     isOpen: innerOpen
   } = useCollapse();
 
-  // console.log("venetianDetails", venetianDetails[0]);
-  console.log("room details", venetianDetails);
-  // console.log(Object.values(roomDetails))
-
   // View for collapsed view
   function collapsedView(data) {
     let result = [];
     for (let i = 0; i < 2; i++) {
-      console.log("data", data[i]);
       result.push(data[i]);
     }
     return result;

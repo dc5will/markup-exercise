@@ -16,9 +16,6 @@ export default function Description() {
     });
   }, [loading]);
 
-  // console.log('venetianLocation', venetianLocation.address)
-  console.log('venetianMedia', venetianMedia.href)
-
   return (
     <div className="Location-container">
       <h4 className='venetian-location'>

@@ -25,8 +25,6 @@ export default function Description() {
     isOpen: innerOpen
   } = useCollapse();
 
-  console.log("venetianDescription", venetianDescription);
-
   return (
     <div className="description-container">
       <section

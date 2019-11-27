@@ -8,7 +8,7 @@ export default function Navbar() {
       <Icon icon="left" className="left-icon" />
       <div className="back-container">
         <label className="navbar-back-button">
-          <p className='back-label-description'>SEE ALL LAS VEGAS HOTELS</p>
+          <div className='back-label-description'>SEE ALL LAS VEGAS HOTELS</div>
         </label>
       </div>
     </div>
