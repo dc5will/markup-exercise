@@ -7,19 +7,26 @@ import "./Details.css";
 export default function Details() {
   const [venetianDetails, setVenetianDetails] = useState([]);
   const [collapsedDetails, setCollapsedDetails] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     HotelApiService.getVenetianInfo().then(data => {
-      let newDetails = [];
-      data.details.forEach(detail => {
-        newDetails.push(detail);
-      });
+      let newDetails = data.details;
       setVenetianDetails(newDetails);
       setCollapsedDetails(collapsedView(newDetails));
       setLoading(false);
+      // console.log('newDetails', newDetails)
     });
   }, [loading]);
+  
+  // Only show first 2 items in newDetails array for collapsed view
+  function collapsedView(data) {
+    let result = [];
+    for (let i = 0; i < 2; i++) {
+      result.push(data[i]);
+    }
+    return result;
+  }
 
   const {
     getCollapseProps: outerCollapseProps
@@ -32,17 +39,10 @@ export default function Details() {
     isOpen: innerOpen
   } = useCollapse();
 
-  // View for collapsed view
-  function collapsedView(data) {
-    let result = [];
-    for (let i = 0; i < 2; i++) {
-      result.push(data[i]);
-    }
-    return result;
-  }
-
   return (
     <div className="details-container">
+
+      {/* Render the items for collapsed view  */}
       <section className="hotel-details-collapsed" {...outerCollapseProps()}>
         <div className="hotel-details">
           {collapsedDetails.map((data, index) => (
@@ -53,6 +53,7 @@ export default function Details() {
           ))}
         </div>
 
+        {/* Toggle label to show rest of details */}
         {!innerOpen && (
           <label {...innerToggleProps()}>
             <div className="show-full-details">
@@ -62,6 +63,7 @@ export default function Details() {
           </label>
         )}
 
+        {/* Render the items to show all the details */}
         <div {...innerCollapseProps()}>
           {venetianDetails.map((data, index) => (
             <div key={index}>
@@ -70,6 +72,8 @@ export default function Details() {
             </div>
           ))}
         </div>
+
+        {/* Toggle label to return to collapsed view */}
         {innerOpen && (
           <label {...innerToggleProps()}>
             <div className="hide-full-details">
@@ -79,6 +83,7 @@ export default function Details() {
           </label>
         )}
       </section>
+      
     </div>
   );
 }
