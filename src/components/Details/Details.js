@@ -11,7 +11,7 @@ export default function Details() {
 
   useEffect(() => {
     HotelApiService.getVenetianInfo().then(data => {
-      let newDetails = data.details;
+      let newDetails = data ? data.details : [];
       setVenetianDetails(newDetails);
       setCollapsedDetails(collapsedView(newDetails));
       setLoading(false);
@@ -83,7 +83,7 @@ export default function Details() {
           </label>
         )}
       </section>
-      
+
     </div>
   );
 }
