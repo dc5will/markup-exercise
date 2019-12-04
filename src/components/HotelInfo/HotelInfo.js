@@ -37,11 +37,12 @@ export default function HotelInfo(props) {
       <div className="header-info-container">
         <div className="hotel-name-container left-side">
           <div className="hotel-name">
-            {venetian.name}
+            <h1 className="hotel-title">{venetian.name}</h1>
             <div className="hotel-ratings-container">
               {generateStarRating()}
-          </div>
             </div>
+          </div>
+
           <div className="second-row-info">
             <label className="hotel-area-name">
               <Icon icon="mark" />

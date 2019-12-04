@@ -27,13 +27,18 @@
 .hotel-name {
   text-transform: uppercase;
   margin-top: 5px;
-  font-size: 36px;
   display: flex;
   flex-direction: row;
 }
 
+.hotel-title {
+  font-size: 36px;
+  margin: 0px;
+}
+
 .hotel-ratings-container {
   margin-left: 1rem;
+  align-self: flex-end;
 }
 
 .hotel-area-name {
