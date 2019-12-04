@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
 import HotelApiService from "../../services/hotel-api-service";
-import "./HotelInfo.css";
 import Description from "../Description/Description";
 import Details from "../Details/Details";
 import Location from "../Location/Location";
 import Tabs from "../Tabs/Tabs";
 import Icon from "../../setup-icons";
+import "./HotelInfo.css";
 
 export default function HotelInfo(props) {
   const [venetian, setVenetian] = useState([]);
   const [hotelRating, setHotelRating] = useState("");
-  const [loading, setLoading] = useState(false);
   const [venetianLocation, setVenetianLocation] = useState({});
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     HotelApiService.getVenetianInfo().then(venetian => {
@@ -25,8 +25,8 @@ export default function HotelInfo(props) {
   // takes hotel rating from api, rounds up, and pushes out stars
   function generateStarRating() {
     let stars = [];
-    let hotelRatingRounded = Math.ceil(Number(hotelRating));
-    for (let i = 0; i < hotelRatingRounded; i++) {
+    let hotelRatingRoundedUp = Math.ceil(Number(hotelRating));
+    for (let i = 0; i < hotelRatingRoundedUp; i++) {
       stars.push(<Icon key={i} icon="star" />);
     }
     return stars;
@@ -35,6 +35,7 @@ export default function HotelInfo(props) {
   return (
     <>
       <div className="header-info-container">
+
         <div className="hotel-name-container left-side">
           <div className="hotel-name">
             <h1 className="hotel-title">{venetian.name}</h1>
@@ -44,7 +45,7 @@ export default function HotelInfo(props) {
           </div>
 
           <div className="second-row-info">
-            <label className="hotel-area-name">
+            <label onClick={() => console.log('setState to LOCATION tab here placeholder')} className="hotel-area-name">
               <Icon icon="mark" />
               {venetianLocation.areaName}
             </label>
@@ -65,6 +66,7 @@ export default function HotelInfo(props) {
           HOTEL ROOMS FROM
         </div>
       </div>
+
       <div className="tab-container">
         <Tabs>
           <div label="DESCRIPTION">
