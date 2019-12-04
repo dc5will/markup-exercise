@@ -40,8 +40,8 @@ export default function HotelInfo(props) {
             {venetian.name}
             <div className="hotel-ratings-container">
               {generateStarRating()}
-            </div>
           </div>
+            </div>
           <div className="second-row-info">
             <label className="hotel-area-name">
               <Icon icon="mark" />
