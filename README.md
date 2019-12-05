@@ -11,4 +11,5 @@
 - Venetian hotel details: http://localhost:8888/api/hotels/venetian 
 - All available hotel list (left column in screenshots): http://localhost:8888/api/hotels/
 
-## Objective
+## Development 
+- [Trello](https://trello.com/b/teZg5vRx/markup-exercise)
