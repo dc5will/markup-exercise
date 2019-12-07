@@ -20,7 +20,7 @@ export default function Details() {
       // console.log('newDetails', newDetails)
     });
   }, [loading]);
-  
+
   // Only show first 2 items in newDetails array for collapsed view
   function collapsedView(data) {
     let result = [];
@@ -39,9 +39,7 @@ export default function Details() {
     return result;
   }
 
-  const {
-    getCollapseProps: outerCollapseProps
-  } = useCollapse({
+  const { getCollapseProps: outerCollapseProps } = useCollapse({
     defaultOpen: true
   });
   const {
@@ -52,7 +50,6 @@ export default function Details() {
 
   return (
     <div className="details-container">
-
       {/* Render the items for collapsed view  */}
       <section className="hotel-details-collapsed" {...outerCollapseProps()}>
         <div className="hotel-details">
@@ -94,7 +91,6 @@ export default function Details() {
           </label>
         )}
       </section>
-
     </div>
   );
 }

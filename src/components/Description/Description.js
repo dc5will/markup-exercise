@@ -14,33 +14,50 @@ export default function Description() {
     HotelApiService.getVenetianInfo().then(data => {
       let newVenetianDetails = data ? data.description : [];
       // setVenetianDescription(newVenetianDetails);
-      setCollapsedDescription(collapsedView(newVenetianDetails));
-      setRemainingDescription(fullView(newVenetianDetails));
+      setCollapsedDescription(collapsedDescriptionView(newVenetianDetails));
+      setRemainingDescription(remainingDescriptionView(newVenetianDetails));
       setLoading(false);
     });
   }, [loading]);
 
-  // console.log("venetianDescription=", venetianDescription);
-
   // Only show first 2 paragraphs for collapsed view
-  function collapsedView(string) {
+  const collapsedDescriptionView = string => {
     let paragraphsArray = string.split(/\r\n\r\n/g);
     let result = [];
     for (let i = 0; i < 2; i++) {
       result.push(paragraphsArray[i]);
     }
     return result;
-  }
+  };
+
+  // takes data from collapsedDescription in state and maps it out
+  const collapsedDescriptionViewRender = () => {
+    return collapsedDescription.map((data, index) => (
+      <div key={index}>
+        <p>{data}</p>
+      </div>
+    ));
+  };
 
   // Show the rest of the view not including the first 2 paragraphs
-  function fullView(string) {
+  const remainingDescriptionView = string => {
     let paragraphsArray = string.split(/\r\n\r\n/g);
     let result = [];
     for (let i = 2; i < paragraphsArray.length; i++) {
       result.push(paragraphsArray[i]);
     }
     return result;
-  }
+  };
+
+  // takes data from remainingDescription in state and maps it out
+  // FIXME: toggling this view has small bug with formatting. Increased gap but fixes itself
+  const remainingDescriptionViewRender = () => {
+    return remainingDescription.map((data, index) => (
+      <div key={index}>
+        <p>{data}</p>
+      </div>
+    ));
+  };
 
   const { getCollapseProps: outerCollapseProps } = useCollapse({
     defaultOpen: true
@@ -58,18 +75,12 @@ export default function Description() {
         className="hotel-description-collapsed"
         {...outerCollapseProps()}
       >
-        <div className="hotel-description">
-          {collapsedDescription.map((data, index) => (
-            <div key={index}>
-              <p>{data}</p>
-            </div>
-          ))}
-        </div>
+        <div className="hotel-description">{collapsedDescriptionViewRender()}</div>
 
         {/* Toggle label to show rest of description */}
         {!innerOpen && (
           <label {...innerToggleProps()}>
-            <div className="show-full-description">
+            <div className="show-remaining-description">
               SHOW FULL DESCRIPTION
               <Icon icon="down" />
             </div>
@@ -78,11 +89,7 @@ export default function Description() {
 
         {/* Render the items to show the remaining description */}
         <div {...innerCollapseProps()}>
-          {remainingDescription.map((data, index) => (
-            <div key={index}>
-              <p>{data}</p>
-            </div>
-          ))}
+          {remainingDescriptionViewRender()}
         </div>
 
         {/* Toggle label to return to collapsed view */}
