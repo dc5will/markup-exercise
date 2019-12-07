@@ -7,37 +7,57 @@ import "./Details.css";
 export default function Details() {
   // const [venetianDetails, setVenetianDetails] = useState([]);
   const [collapsedDetails, setCollapsedDetails] = useState([]);
-  const [remainingDetailsView, setRemainingDetailsView] = useState([]);
+  const [remainingDetails, setRemainingDetails] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     HotelApiService.getVenetianInfo().then(data => {
       let newDetails = data ? data.details : [];
       // setVenetianDetails(newDetails);
-      setCollapsedDetails(collapsedView(newDetails));
-      setRemainingDetailsView(remainingView(newDetails));
+      setCollapsedDetails(collapsedDetailsView(newDetails));
+      setRemainingDetails(remainingDetailsView(newDetails));
       setLoading(false);
       // console.log('newDetails', newDetails)
     });
   }, [loading]);
 
   // Only show first 2 items in newDetails array for collapsed view
-  function collapsedView(data) {
+  const collapsedDetailsView = data => {
     let result = [];
     for (let i = 0; i < 2; i++) {
       result.push(data[i]);
     }
     return result;
-  }
+  };
 
-  // Only show first 2 items in newDetails array for collapsed view
-  function remainingView(data) {
+  // takes data from collapsedDescription in state and maps it out
+  const collapsedDetailsViewRender = () => {
+    return collapsedDetails.map((data, index) => (
+      <div key={index}>
+        <strong>{data.label}:</strong>
+        <p>{data.value}</p>
+      </div>
+    ));
+  };
+
+  // Show the rest of the view not including the first 2 items
+  const remainingDetailsView = data => {
     let result = [];
     for (let i = 2; i < data.length; i++) {
       result.push(data[i]);
     }
     return result;
-  }
+  };
+
+  // takes data from remainingDetails in state and maps it out
+  const remainingDetailsViewRender = () => {
+    return remainingDetails.map((data, index) => (
+      <div key={index}>
+        <strong>{data.label}:</strong>
+        <p>{data.value}</p>
+      </div>
+    ));
+  };
 
   const { getCollapseProps: outerCollapseProps } = useCollapse({
     defaultOpen: true
@@ -52,14 +72,7 @@ export default function Details() {
     <div className="details-container">
       {/* Render the items for collapsed view  */}
       <section className="hotel-details-collapsed" {...outerCollapseProps()}>
-        <div className="hotel-details">
-          {collapsedDetails.map((data, index) => (
-            <div key={index}>
-              <strong>{data.label}:</strong>
-              <p>{data.value}</p>
-            </div>
-          ))}
-        </div>
+        <div className="hotel-details">{collapsedDetailsViewRender()}</div>
 
         {/* Toggle label to show rest of details */}
         {!innerOpen && (
@@ -72,14 +85,7 @@ export default function Details() {
         )}
 
         {/* Render the items to show all the details */}
-        <div {...innerCollapseProps()}>
-          {remainingDetailsView.map((data, index) => (
-            <div key={index}>
-              <strong>{data.label}:</strong>
-              <p>{data.value}</p>
-            </div>
-          ))}
-        </div>
+        <div {...innerCollapseProps()}>{remainingDetailsViewRender()}</div>
 
         {/* Toggle label to return to collapsed view */}
         {innerOpen && (
