@@ -5,15 +5,17 @@ import Icon from "../../setup-icons";
 import "./Description.css";
 
 export default function Description() {
-  const [venetianDescription, setVenetianDescription] = useState([]);
+  // const [venetianDescription, setVenetianDescription] = useState([]);
   const [collapsedDescription, setCollapsedDescription] = useState([]);
+  const [remainingDescription, setRemainingDescription] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     HotelApiService.getVenetianInfo().then(data => {
       let newVenetianDetails = data ? data.description : [];
-      setVenetianDescription(newVenetianDetails);
+      // setVenetianDescription(newVenetianDetails);
       setCollapsedDescription(collapsedView(newVenetianDetails));
+      setRemainingDescription(fullView(newVenetianDetails));
       setLoading(false);
     });
   }, [loading]);
@@ -30,6 +32,16 @@ export default function Description() {
     return result;
   }
 
+  // Show the rest of the view not including the first 2 paragraphs
+  function fullView(string) {
+    let paragraphsArray = string.split(/\r\n\r\n/g);
+    let result = [];
+    for (let i = 2; i < paragraphsArray.length; i++) {
+      result.push(paragraphsArray[i]);
+    }
+    return result;
+  }
+
   const { getCollapseProps: outerCollapseProps } = useCollapse({
     defaultOpen: true
   });
@@ -38,18 +50,6 @@ export default function Description() {
     getToggleProps: innerToggleProps,
     isOpen: innerOpen
   } = useCollapse();
-
-  console.log("collapsedDescription", collapsedDescription);
-  // console.log("venetianDescription", venetianDescription);
-
-  // function generateFullDescription() {
-  //   console.log('venetianDescription', venetianDescription)
-  //   return venetianDescription.map((data, index) => (
-  //     <div key={index}>
-  //       <p>{data}</p>
-  //     </div>
-  //   ));
-  // }
 
   return (
     <div className="description-container">
@@ -76,8 +76,14 @@ export default function Description() {
           </label>
         )}
 
-        {/* Render the items to show all the description */}
-        <div {...innerCollapseProps()}>{venetianDescription}</div>
+        {/* Render the items to show the remaining description */}
+        <div {...innerCollapseProps()}>
+          {remainingDescription.map((data, index) => (
+            <div key={index}>
+              <p>{data}</p>
+            </div>
+          ))}
+        </div>
 
         {/* Toggle label to return to collapsed view */}
         {innerOpen && (
