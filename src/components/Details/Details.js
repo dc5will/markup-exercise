@@ -5,15 +5,17 @@ import Icon from "../../setup-icons";
 import "./Details.css";
 
 export default function Details() {
-  const [venetianDetails, setVenetianDetails] = useState([]);
+  // const [venetianDetails, setVenetianDetails] = useState([]);
   const [collapsedDetails, setCollapsedDetails] = useState([]);
+  const [remainingDetailsView, setRemainingDetailsView] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     HotelApiService.getVenetianInfo().then(data => {
       let newDetails = data ? data.details : [];
-      setVenetianDetails(newDetails);
+      // setVenetianDetails(newDetails);
       setCollapsedDetails(collapsedView(newDetails));
+      setRemainingDetailsView(remainingView(newDetails));
       setLoading(false);
       // console.log('newDetails', newDetails)
     });
@@ -23,6 +25,15 @@ export default function Details() {
   function collapsedView(data) {
     let result = [];
     for (let i = 0; i < 2; i++) {
+      result.push(data[i]);
+    }
+    return result;
+  }
+
+  // Only show first 2 items in newDetails array for collapsed view
+  function remainingView(data) {
+    let result = [];
+    for (let i = 2; i < data.length; i++) {
       result.push(data[i]);
     }
     return result;
@@ -65,7 +76,7 @@ export default function Details() {
 
         {/* Render the items to show all the details */}
         <div {...innerCollapseProps()}>
-          {venetianDetails.map((data, index) => (
+          {remainingDetailsView.map((data, index) => (
             <div key={index}>
               <strong>{data.label}:</strong>
               <p>{data.value}</p>
