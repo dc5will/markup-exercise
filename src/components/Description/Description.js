@@ -54,13 +54,13 @@ export default function Description() {
   const remainingDescriptionViewRender = () => {
     return remainingDescription.map((data, index) => (
       <div key={index}>
-        <p>{data}</p>
+        <p className='description-paragraphs'>{data}</p>
       </div>
     ));
   };
 
   const { getCollapseProps: outerCollapseProps } = useCollapse({
-    defaultOpen: true
+    defaultOpen: true,
   });
   const {
     getCollapseProps: innerCollapseProps,
@@ -75,12 +75,14 @@ export default function Description() {
         className="hotel-description-collapsed"
         {...outerCollapseProps()}
       >
-        <div className="hotel-description">{collapsedDescriptionViewRender()}</div>
+        <div className="hotel-description">
+          {collapsedDescriptionViewRender()}
+        </div>
 
         {/* Toggle label to show rest of description */}
         {!innerOpen && (
           <label {...innerToggleProps()}>
-            <div className="show-remaining-description">
+            <div className="show-full-description">
               SHOW FULL DESCRIPTION
               <Icon icon="down" />
             </div>
@@ -88,9 +90,7 @@ export default function Description() {
         )}
 
         {/* Render the items to show the remaining description */}
-        <div {...innerCollapseProps()}>
-          {remainingDescriptionViewRender()}
-        </div>
+        <div {...innerCollapseProps()}>{remainingDescriptionViewRender()}</div>
 
         {/* Toggle label to return to collapsed view */}
         {innerOpen && (

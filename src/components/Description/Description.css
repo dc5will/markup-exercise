@@ -3,28 +3,39 @@
   padding: 0.78rem;
   font-size: 0.88rem;
   color: #000;
+  height: 200px;
 }
 
-.show-full-description > .icons {
-  fill: rgb(137,94,149);
-  margin-left: 10px;
-  
-}
-.hide-full-description > .icons {
-  fill: rgb(137,94,149);
-  margin-left: 10px;
+.hide-full-description,
+.show-full-description {
+  color: rgb(137, 94, 149);
+  cursor: pointer;
 }
 
 .hotel-description {
   white-space: pre-wrap;
 }
 
+/* collapsed description styling */
 .hotel-description-collapsed {
   height: 200px;
   padding: 0 1rem;
 }
 
-.hide-full-description, .show-full-description {
-  color: rgb(137,94,149);
-  cursor: pointer;
+/* icon styling */
+.hide-full-description > .icons {
+  fill: rgb(137, 94, 149);
+  margin-left: 10px;
 }
+
+.show-full-description > .icons {
+  fill: rgb(137, 94, 149);
+  margin-left: 10px;
+}
+
+/* fixed margin discrepency on toggle */
+.description-paragraphs {
+  margin-top: 0px;
+}
+
+
