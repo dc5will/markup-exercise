@@ -20,7 +20,7 @@ export default function HotelInfo(props) {
       setVenetian(venetian);
       setVenetianLocation(venetian.location);
       setHotelRating(venetian.starRating);
-      setActiveTab()
+      // setActiveTab(context.activeTab)
       setLoading(false);
     });
   }, [loading]);
@@ -34,6 +34,8 @@ export default function HotelInfo(props) {
     }
     return stars;
   }
+
+  console.log('context=', context)
 
   return (
     <>

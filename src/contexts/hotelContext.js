@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 const HotelContext = React.createContext({
-  activeTab: '',
+  activeTab: "",
   error: null,
   setError: () => {},
   clearError: () => {}
@@ -12,7 +12,11 @@ export default HotelContext;
 export class HotelProvider extends Component {
   constructor(props) {
     super(props);
-    const state = { user: {}, error: null };
+    const state = {
+      user: {},
+      error: null,
+      activeTab: 'DESCRIPTION',
+    };
     this.state = state;
   }
 
@@ -32,8 +36,10 @@ export class HotelProvider extends Component {
   render() {
     const value = {
       error: this.state.error,
+      activeTab: this.state.activeTab,
       setError: this.setError,
-      clearError: this.clearError
+      clearError: this.clearError,
+      onClickTabItem: this.onClickTabItem,
     };
 
     return (
