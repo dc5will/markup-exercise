@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import HotelApiService from "../../services/hotel-api-service";
 import Description from "../Description/Description";
 import Details from "../Details/Details";
 import Location from "../Location/Location";
 import Tabs from "../Tabs/Tabs";
 import Icon from "../../setup-icons";
+import HotelContext from '../../contexts/HotelContext';
 import "./HotelInfo.css";
 
 export default function HotelInfo(props) {
@@ -12,12 +13,14 @@ export default function HotelInfo(props) {
   const [hotelRating, setHotelRating] = useState("");
   const [venetianLocation, setVenetianLocation] = useState({});
   const [loading, setLoading] = useState(true);
+  const context = useContext(HotelContext);
 
   useEffect(() => {
     HotelApiService.getVenetianInfo().then(venetian => {
       setVenetian(venetian);
       setVenetianLocation(venetian.location);
       setHotelRating(venetian.starRating);
+      setActiveTab()
       setLoading(false);
     });
   }, [loading]);

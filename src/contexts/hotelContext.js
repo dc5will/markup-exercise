@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 const HotelContext = React.createContext({
+  activeTab: '',
   error: null,
   setError: () => {},
   clearError: () => {}
@@ -24,12 +25,17 @@ export class HotelProvider extends Component {
     this.setState({ error: null });
   };
 
+  onClickTabItem = tab => {
+    this.setState({ activeTab: tab });
+  };
+
   render() {
     const value = {
       error: this.state.error,
       setError: this.setError,
       clearError: this.clearError
     };
+
     return (
       <HotelContext.Provider value={value}>
         {this.props.children}
