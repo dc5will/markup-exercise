@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Tab from "./Tab";
+import HotelContext from '../../contexts/HotelContext';
 
 class Tabs extends Component {
+  static contextType = HotelContext;
   static propTypes = {
     children: PropTypes.instanceOf(Array).isRequired
   };
@@ -15,10 +17,12 @@ class Tabs extends Component {
   }
 
   onClickTabItem = tab => {
-    this.setState({ activeTab: tab });
+    this.setState({ context: tab });
   };
+
   
   render() {
+    console.log('this.context=', this.context)
     const {
       onClickTabItem,
       props: { children },

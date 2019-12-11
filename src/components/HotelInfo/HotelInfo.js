@@ -20,7 +20,6 @@ export default function HotelInfo(props) {
       setVenetian(venetian);
       setVenetianLocation(venetian.location);
       setHotelRating(venetian.starRating);
-      // setActiveTab(context.activeTab)
       setLoading(false);
     });
   }, [loading]);
@@ -50,7 +49,7 @@ export default function HotelInfo(props) {
           </div>
 
           <div className="second-row-info">
-            <label onClick={() => console.log('setState to LOCATION tab here placeholder')} className="hotel-area-name">
+            <label onClick={() => context.onClickTabItem('LOCATION')} className="hotel-area-name">
               <Icon icon="mark" />
               {venetianLocation.areaName}
             </label>
